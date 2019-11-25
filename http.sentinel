@@ -1,3 +1,6 @@
 import "http"
-print(http.get("https://gist.github.com/glenngillen/8815f6e257e67ddb70291999760620ea.json"))
+import "json"
+resp = http.get("https://gist.github.com/glenngillen/8815f6e257e67ddb70291999760620ea.json")
+data = json.unmarshal(resp.body)
+print(data)
 main = rule { true }
